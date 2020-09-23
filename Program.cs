@@ -6,7 +6,6 @@ namespace HERANCA.Atv2
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
         }
     }
 }
