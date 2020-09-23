@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Contracts;
+using System.Globalization;
 using System.Text;
 
 namespace HERANCA.Atv2.Entities
@@ -20,7 +22,9 @@ namespace HERANCA.Atv2.Entities
 
         public virtual string PriceTag()
         {
-            return Price.ToString();
+            return Name 
+                + " $" 
+                +Price.ToString("F2", CultureInfo.InvariantCulture);
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Text;
 
 namespace HERANCA.Atv2.Entities
@@ -17,13 +18,18 @@ namespace HERANCA.Atv2.Entities
             CustomsFee = customsFee;
         }
 
-        public override string PriceTag()
-        {
-            return base.PriceTag();
-        }
+
         public double TotalPrice()
         {
-            return Price * CustomsFee;
+            return Price + CustomsFee;
+        }
+        public override string PriceTag()
+        {
+            return Name 
+                + " $" 
+                + TotalPrice().ToString("F2", CultureInfo.InvariantCulture) 
+                + " (Customs fee:" 
+                +CustomsFee + ")";
         }
     }
 }
